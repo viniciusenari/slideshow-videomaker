@@ -1,5 +1,6 @@
 import os
 from PIL import Image
+from numpy import resize
 
 def resize_image(image, width, height, fill_color = (0, 0, 0)):
     '''
@@ -43,8 +44,8 @@ def resize_all_images_in_folder(folder, width, height, fill_color = (0, 0, 0)):
     '''
     directory = sorted(os.listdir(folder))
 
-    for filename in directory:
+    for i, filename in enumerate(directory):
         if filename != '.gitkeep':
             image = Image.open(f'{folder}/' + filename)
             new_image = resize_image(image, width, height, fill_color = fill_color)
-            new_image.save(f'images/resized/"{filename}".png')
+            new_image.save(f'images/resized/resized{i}.png')
