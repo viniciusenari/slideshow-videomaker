@@ -48,4 +48,4 @@ def resize_all_images_in_folder(folder, width, height, fill_color = (0, 0, 0)):
         if filename != '.gitkeep':
             image = Image.open(f'{folder}/' + filename)
             new_image = resize_image(image, width, height, fill_color = fill_color)
-            new_image.save(f'images/resized/resized{i}.png')
+            new_image.save(f'images/resized/resized{i:03d}.png')
