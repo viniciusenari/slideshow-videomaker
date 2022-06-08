@@ -1,6 +1,5 @@
 import os
 from PIL import Image
-from numpy import resize
 
 def resize_image(image, size, fill_color = (0, 0, 0)):
     '''
